@@ -12,6 +12,10 @@ class TasksController < ApplicationController
   end
   # The associated view is now autoatically loaded: app/views/tasks/index.html
 
+  # This is a memeber action that loads a single task.
+  def show
+    @task = Task.find(params[:id])
+  end
+  # The associated is now loaded app/views/tasks/show.html.erb
 
-  
 end

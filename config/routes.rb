@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   root 'tasks#index'
 
   # "GET /tasks/:id" loads the show action of the tasks controller.
-  get 'tasks/:id' => 'tasks#show'
+  # We can use "constraints:" to enforce (in this case) the format of the given id value
+  get 'tasks/:id' => 'tasks#show', constraints: {id: /\d+/}, as: 'task'
 
-  
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

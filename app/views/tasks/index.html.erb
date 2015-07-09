@@ -1,6 +1,7 @@
 <ul>
   <% @tasks.each do |task| %>
-    <li><%= task.description %></li>
+    <!-- a helper will provide a link for each task on the root page, with the '<a href=' passed in the 'link_to' variable and the task path passed in 'task' -->
+    <li><%= link_to task.description, task %></li>
   <% end %>
 </ul>
 
